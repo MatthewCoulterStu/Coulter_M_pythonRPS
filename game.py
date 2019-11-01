@@ -2,12 +2,33 @@ from random import randint
 #sets options
 choices=["rock","paper","scissors"]
 #ai makes choice
-
 player_lives= 5
 computer_lives= 5
 computer=choices[randint(0, 2)]
 
 player = False
+
+def winorlose(status):
+	print("Called win or lose", status)
+	print("You", status , "would you like to play again?")
+	choice = input("Y/N")
+
+	if choice == "y" or choice == "Y":
+		global player_lives
+		global computer_lives
+		global player
+		global computer
+		player_lives = 5
+		computer_lives = 5
+		player = False
+		computer = choices[randint(0,2)]
+
+	elif choice == "N" or choice == "n":
+		print("ByeBye")
+		exit()
+
+#defined function
+
 
 while player is False:
 	print("==============================================================\n")
@@ -53,32 +74,34 @@ while player is False:
 			computer_lives = computer_lives -1	
 
 	if player_lives is 0:
-		print("You died, play again?")
-		choice = input("Y/N")
+		winorlose("lost")
+		# print("You died, play again?")
+		# choice = input("Y/N")
 
-		if choice == "y" or choice == "Y":
-			player_lives = 5
-			computer_lives = 5
-			player = False
-			computer = choice[randint(0,2)]
+		# if choice == "y" or choice == "Y":
+		# 	player_lives = 5
+		# 	computer_lives = 5
+		# 	player = False
+		# 	computer = choice[randint(0,2)]
 
-		elif choice == "N" or choice == "n":
-			print("ByeBye")
-			exit()
+		# elif choice == "N" or choice == "n":
+		# 	print("ByeBye")
+		# 	exit()
 
 	if computer_lives is 0:
-		print("You win, play again?")
-		choice = input("Y/N")
+		winorlose("won")
+		# print("You win, play again?")
+		# choice = input("Y/N")
 
-		if choice == "y" or choice == "Y":
-			player_lives = 5
-			computer_lives = 5
-			player = False
-			computer = choice[randint(0,2)]
+		# if choice == "y" or choice == "Y":
+		# 	player_lives = 5
+		# 	computer_lives = 5
+		# 	player = False
+		# 	computer = choice[randint(0,2)]
 
-		elif choice == "N" or choice == "n":
-			print("ByeBye!")
-			exit()
+		# elif choice == "N" or choice == "n":
+		# 	print("ByeBye!")
+		# 	exit()
 
 		
 	player = False
