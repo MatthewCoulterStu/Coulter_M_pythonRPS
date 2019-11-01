@@ -77,7 +77,7 @@ while player is False:
 			computer = choice[randint(0,2)]
 
 		elif choice == "N" or choice == "n":
-			print("ByeBye")
+			print("ByeBye!")
 			exit()
 
 		
